@@ -30,9 +30,20 @@ public class Maze
     /// Check to see if you can move left.  If you can, then move.  If you
     /// can't move, throw an InvalidOperationException with the message "Can't go that way!".
     /// </summary>
+    /// private readonly Dictionary<(int, int), bool[]> _mazeMap;
     public void MoveLeft()
     {
         // FILL IN CODE
+         {
+        if (_mazeMap[(_currX, _currY)][0])
+        {
+            _currX--;
+        }
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+    }
     }
 
     /// <summary>
@@ -41,7 +52,17 @@ public class Maze
     /// </summary>
     public void MoveRight()
     {
-        // FILL IN CODE
+        // FILL IN 
+        {
+        if (_mazeMap[(_currX, _currY)][1])
+        {
+            _currX++;
+        }
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+    }
     }
 
     /// <summary>
@@ -51,6 +72,17 @@ public class Maze
     public void MoveUp()
     {
         // FILL IN CODE
+         {
+        if (_mazeMap[(_currX, _currY)][2])
+        {
+            _currY--;
+        }
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+    }
+
     }
 
     /// <summary>
@@ -60,6 +92,15 @@ public class Maze
     public void MoveDown()
     {
         // FILL IN CODE
+         if (_mazeMap[(_currX, _currY)][3])
+        {
+            _currY++;
+        }
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+    
     }
 
     public string GetStatus()
