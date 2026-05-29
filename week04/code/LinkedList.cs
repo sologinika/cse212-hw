@@ -41,7 +41,7 @@ private class Node
     public void InsertTail(int value)
     
         // TODO Problem 1
-{
+
    {
         Node newNode = new(value);
 
@@ -57,7 +57,7 @@ private class Node
             _tail = newNode;
         }
     }
-    }
+    
 
 
     /// <summary>
@@ -180,7 +180,7 @@ private class Node
     /// Search for all instances of 'oldValue' and replace the value to 'newValue'.
     /// </summary>
     public void Replace(int oldValue, int newValue)
-    {
+{
         // TODO Problem 4
 
     Node? curr = _head;
