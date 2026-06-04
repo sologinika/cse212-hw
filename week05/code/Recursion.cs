@@ -209,23 +209,23 @@ public static class Recursion
     };
 
     for (int i = 0; i < 4; i++)
-    {
-        int newX = x + directions[i, 0];
-        int newY = y + directions[i, 1];
+     {
+    int newX = x + directions[i, 0];
+    int newY = y + directions[i, 1];
 
-        if (maze.IsValidMove(newX, newY, currPath))
+    if (maze.IsValidMove(currPath, newX, newY))
         {
-            currPath.Add((newX, newY));
+        currPath.Add((newX, newY));
 
-            SolveMaze(
-                results,
-                maze,
-                newX,
-                newY,
-                currPath);
+        SolveMaze(
+            results,
+            maze,
+            newX,
+            newY,
+            currPath);
 
-            currPath.RemoveAt(currPath.Count - 1);
+         currPath.RemoveAt(currPath.Count - 1);
         }
-    }
-   }
+     }
+  }
 }
