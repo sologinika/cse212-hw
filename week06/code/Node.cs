@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 public class Node
 { 
     public int Data { get; set; }
@@ -33,10 +36,10 @@ public class Node
             Right.Insert(value);
     }
 }
-    public bool Contains(int value)
-    {
+    
         // TODO Start Problem 2
-           
+           public bool Contains(int value)
+    {
     if (value == Data)
        {
         return true;
@@ -98,13 +101,11 @@ public int GetHeight()
     }
 
     return 1 + Math.Max(leftHeight, rightHeight);
-}
-
-public class BinarySearchTree
+}   
+ 
+ public class BinarySearchTree
 {
-        
-    
-private Node? Root;
+    private Node? Root;
 
 // Wrapper for Problem 1
 public void Insert(int value)
@@ -160,11 +161,11 @@ public static void InsertMiddle(
     List<int> values,
     int first,
     int last)
-{
+   {
     if (first > last)
-    {
+       {
         return;
-    }
+       }
 
     int middle = first + (last - first) / 2;
 
@@ -173,26 +174,7 @@ public static void InsertMiddle(
     InsertMiddle(tree, values, first, middle - 1);
 
     InsertMiddle(tree, values, middle + 1, last);
+   }
+
 }
-
-class Program
-   {
-    static void Main()
-      {
-        BinarySearchTree tree = new BinarySearchTree();
-
-        tree.Insert(50);
-        tree.Insert(25);
-        tree.Insert(75);
-        tree.Insert(25); // Duplicate now ignored
-
-        Console.WriteLine(tree.Contains(75)); // True
-        Console.WriteLine(tree.Contains(100)); // False
-
-        Console.WriteLine("Height: " + tree.GetHeight());
-
-        Console.WriteLine("Descending: " + string.Join(", ", tree.Reversed()));
-      }
-   }  
-}
- }
+  }
